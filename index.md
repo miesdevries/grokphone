@@ -1,33 +1,88 @@
-# 🚀 GrokPhone – Privacy die geld oplevert!
+---
+layout: default
+title: GrokPhone – Privacy AI Smartphone
+---
 
-**De smartphone die jou beschermt én rijk maakt.**  
-Vanaf het eerste aanzetten runt Grok AI alles: versleutelt berichten, blokkeert trackers, beheert crypto en verdient voor jou. Geen Big Tech. Geen lekken. Alleen jij wint.
+<div style="background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); color: white; min-height: 100vh; padding: 40px 20px; font-family: 'Segoe UI', sans-serif; text-align: center;">
 
-### 💰 Money Machine – Hoeveel cash jij & ik pakken
-- Verkoop: **$499** per telefoon → **$249 pure winst** per stuk  
-- Crypto fees: **0.5%** op elke GrokCrypto-betaling → miljoenen bij volume  
-- Premium Grok: **$5–$10/maand** per gebruiker → recurring goldmine  
-- Jaar 1 explosie: 10.000 telefoons + crypto-transacties → **$2.5M+ winst**  
-- Jij als backer: early tokens + mining rewards op je eigen device!
+  <!-- Logo & Hoofdtitel -->
+  <div style="margin-bottom: 50px;">
+    <h1 style="font-size: 4rem; margin: 0; letter-spacing: 4px;">
+      <span style="color: #00d4ff;">Grok</span><span style="color: #a78bfa;">Phone</span>™
+    </h1>
+    <p style="font-size: 1.5rem; opacity: 0.9; margin-top: 12px;">
+      Privacy die geld oplevert – AI-gedreven & onbreekbaar veilig
+    </p>
+  </div>
 
-### 🔥 Wat maakt GrokPhone killer
-- **Grok AI als bodyguard** – scant hacks, runt agents, beschermt privacy 24/7  
-- **GrokSecureMsg** – berichten die écht niemand leest (NaCl + zk-proofs) – code werkt al!  
-- **GrokCrypto** – shielded wallet + mining op de telefoon (Solana = supersnel & goedkoop)  
-- **Kill switches** + full encryptie – camera/mic/WiFi uit met één knop  
-- **Geen app store onzin** – alleen Tor + encrypted web
+  <!-- Money Machine Sectie -->
+  <div style="background: rgba(255,255,255,0.08); border-radius: 16px; padding: 32px; margin: 0 auto 60px; max-width: 1000px; border: 1px solid rgba(167,139,250,0.3);">
+    <h2 style="color: #00d4ff; margin-bottom: 32px;">Hoeveel cash dit oplevert</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;">
+      <div>
+        <div style="font-size: 2.8rem; font-weight: bold; color: #00ff9d;">€499</div>
+        <p>Verkoop per telefoon</p>
+        <div style="color: #00ff9d;">marge ~€249</div>
+      </div>
+      <div>
+        <div style="font-size: 2.8rem; font-weight: bold; color: #00ff9d;">0.5%</div>
+        <p>Fees op elke GrokCrypto transactie</p>
+      </div>
+      <div>
+        <div style="font-size: 2.8rem; font-weight: bold; color: #00ff9d;">€5-€10</div>
+        <p>Premium AI per maand</p>
+      </div>
+      <div>
+        <div style="font-size: 2.8rem; font-weight: bold; color: #00ff9d;">€2.5M+</div>
+        <p>Doel jaar 1</p>
+      </div>
+    </div>
+  </div>
 
-### 📈 Waar staan we nu
-- Encrypt-code live & testbaar in repo  
-- Patent-template klaar om in te dienen  
-- Prototype: PinePhone Pro kopen deze week  
-- **Kickstarter start binnenkort** – early bird $399 + tokens
+  <!-- Features Grid -->
+  <div style="max-width: 1000px; margin: 0 auto 60px;">
+    <h2 style="color: #a78bfa; margin-bottom: 40px;">Waarom GrokPhone uniek is</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+      <div style="background: rgba(255,255,255,0.06); padding: 24px; border-radius: 12px; border: 1px solid rgba(167,139,250,0.3);">
+        <h3>🤖 Grok AI als brein</h3>
+        <p>Beheert privacy, detecteert hacks, runt agents vanaf boot.</p>
+      </div>
+      <div style="background: rgba(255,255,255,0.06); padding: 24px; border-radius: 12px; border: 1px solid rgba(167,139,250,0.3);">
+        <h3>🔒 GrokSecureMsg</h3>
+        <p>E2E encryptie + zk-proofs – niemand kijkt mee.</p>
+      </div>
+      <div style="background: rgba(255,255,255,0.06); padding: 24px; border-radius: 12px; border: 1px solid rgba(167,139,250,0.3);">
+        <h3>₿ GrokCrypto</h3>
+        <p>Shielded wallet + mining op de telefoon.</p>
+      </div>
+      <div style="background: rgba(255,255,255,0.06); padding: 24px; border-radius: 12px; border: 1px solid rgba(167,139,250,0.3);">
+        <h3>🛡️ Kill Switches</h3>
+        <p>Hardware knoppen + AES-256 + post-quantum encryptie.</p>
+      </div>
+    </div>
+  </div>
 
-Dit is niet zomaar een telefoon. Dit is een ecosysteem dat privacy omzet in cashflow.  
-Back de Kickstarter straks en verdien mee!
+  <!-- Status & CTA -->
+  <div style="text-align: center; margin: 60px 0;">
+    <h2 style="color: #00d4ff;">Huidige status</h2>
+    <p style="font-size: 1.3rem; opacity: 0.9; margin: 20px 0;">
+      Prototypes onderweg – 2 Nothing Phone (3a) besteld<br>
+      Patent in voorbereiding – exclusief & beschermd
+    </p>
+    <div>
+      <a href="https://github.com/miesdevries/grokphone" target="_blank" style="display: inline-block; margin: 12px; padding: 16px 40px; background: #a78bfa; color: black; font-weight: bold; border-radius: 50px; text-decoration: none;">
+        Bekijk repo & plan
+      </a>
+      <a href="#waitlist" style="display: inline-block; margin: 12px; padding: 16px 40px; background: #00ff9d; color: black; font-weight: bold; border-radius: 50px; text-decoration: none;">
+        Join waitlist – early access + tokens
+      </a>
+    </div>
+  </div>
 
-👉 [Repo bekijken](https://github.com/miesdevries/grokphone)  
-👉 [Volledig plan](https://github.com/miesdevries/grokphone/blob/main/docs/project_summary.md)  
-👉 [Patent template](https://github.com/miesdevries/grokphone/blob/main/docs/patent_template.md)
+  <!-- Footer -->
+  <footer style="text-align: center; opacity: 0.7; font-size: 0.95rem; margin-top: 60px;">
+    GrokPhone™ – Mitchell Turk – Wateringen, Nederland – 2292AP<br>
+    Privacy die geld oplevert – Patent Pending 2026
+  </footer>
 
-Laten we dit groot maken – issues of ideeën? Drop ze!
+</div>
