@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="com.stay4safe.stay4s">
+        <permission name="android.permission.FOREGROUND_SERVICE" />
+        <permission name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+        <permission name="moe.shizuku.manager.permission.API_V23" />
+    </privapp-permissions>
+</permissions>

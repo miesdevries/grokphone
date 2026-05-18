@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exceptions>
+    <exception package="com.stay4safe.stay4s">
+        <permission name="android.permission.POST_NOTIFICATIONS" fixed="false" />
+        <permission name="moe.shizuku.manager.permission.API_V23" fixed="false" />
+    </exception>
+</exceptions>

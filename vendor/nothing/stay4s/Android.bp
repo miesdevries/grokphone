@@ -8,7 +8,25 @@ android_app_import {
     presigned: true,
     privileged: true,
     product_specific: true,
+    required: [
+        "privapp-permissions-stay4s.xml",
+        "default-permissions-stay4s.xml",
+    ],
     dex_preopt: {
         enabled: false,
     },
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-stay4s.xml",
+    src: "privapp-permissions-stay4s.xml",
+    sub_dir: "permissions",
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "default-permissions-stay4s.xml",
+    src: "default-permissions-stay4s.xml",
+    sub_dir: "default-permissions",
+    product_specific: true,
 }

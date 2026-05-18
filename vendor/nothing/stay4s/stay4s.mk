@@ -7,7 +7,11 @@ $(call inherit-product-if-exists, device/nothing/asteroids/vendor/nothing/stay4s
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.stay4s.enabled=true \
     ro.stay4s.grokphone.enabled=true \
-    ro.stay4s.target_device=asteroids
+    ro.stay4s.target_device=asteroids \
+    ro.stay4s.channel=integration \
+    ro.stay4s.version=0.1.0
 
 PRODUCT_PACKAGES += \
-    Stay4S
+    Stay4S \
+    privapp-permissions-stay4s.xml \
+    default-permissions-stay4s.xml
