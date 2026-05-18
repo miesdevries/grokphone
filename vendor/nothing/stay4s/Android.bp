@@ -1,0 +1,14 @@
+//
+// Stay4S prebuilt app integration.
+//
+
+android_app_import {
+    name: "Stay4S",
+    apk: "Stay4S.apk",
+    presigned: true,
+    privileged: true,
+    product_specific: true,
+    dex_preopt: {
+        enabled: false,
+    },
+}

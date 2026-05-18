@@ -8,3 +8,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.stay4s.enabled=true \
     ro.stay4s.grokphone.enabled=true \
     ro.stay4s.target_device=asteroids
+
+PRODUCT_PACKAGES += \
+    Stay4S
