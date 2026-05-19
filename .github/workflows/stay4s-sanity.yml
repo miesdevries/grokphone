@@ -1,0 +1,100 @@
+name: Stay4S sanity checks
+
+on:
+  push:
+    branches:
+      - stay4s-integration
+      - main
+  pull_request:
+
+jobs:
+  stay4s-sanity:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate expected files
+        run: |
+          set -euo pipefail
+
+          test -f AndroidProducts.mk
+          test -f lineage_asteroids.mk
+          test -f stay4s_asteroids.mk
+          test -f vendor/nothing/stay4s/Android.bp
+          test -f vendor/nothing/stay4s/stay4s.mk
+          test -f vendor/nothing/stay4s/stay4s_config.mk
+          test -f vendor/nothing/stay4s/Stay4S.apk
+          test -f vendor/nothing/stay4s/privapp-permissions-stay4s.xml
+          test -f vendor/nothing/stay4s/default-permissions-stay4s.xml
+
+      - name: Validate product references
+        run: |
+          set -euo pipefail
+
+          grep -q 'stay4s_asteroids.mk' AndroidProducts.mk
+          grep -q 'stay4s_asteroids-userdebug' AndroidProducts.mk
+          grep -q 'PRODUCT_NAME := stay4s_asteroids' stay4s_asteroids.mk
+          grep -q 'device/nothing/asteroids/vendor/nothing/stay4s/stay4s.mk' lineage_asteroids.mk
+          grep -q 'PRODUCT_PACKAGES += \\' vendor/nothing/stay4s/stay4s.mk
+          grep -q 'Stay4S' vendor/nothing/stay4s/stay4s.mk
+          grep -q 'ro.stay4s.enabled=true' vendor/nothing/stay4s/stay4s.mk
+
+      - name: Validate Soong module references
+        run: |
+          set -euo pipefail
+
+          grep -q 'android_app_import' vendor/nothing/stay4s/Android.bp
+          grep -q 'name: "Stay4S"' vendor/nothing/stay4s/Android.bp
+          grep -q 'apk: "Stay4S.apk"' vendor/nothing/stay4s/Android.bp
+          grep -q 'privileged: true' vendor/nothing/stay4s/Android.bp
+          grep -q 'product_specific: true' vendor/nothing/stay4s/Android.bp
+          grep -q 'privapp-permissions-stay4s.xml' vendor/nothing/stay4s/Android.bp
+          grep -q 'default-permissions-stay4s.xml' vendor/nothing/stay4s/Android.bp
+
+      - name: Validate XML syntax and package names
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+
+          expected_package = "com.stay4safe.stay4s"
+          files = [
+              Path("vendor/nothing/stay4s/privapp-permissions-stay4s.xml"),
+              Path("vendor/nothing/stay4s/default-permissions-stay4s.xml"),
+          ]
+
+          for path in files:
+              root = ET.parse(path).getroot()
+              xml_text = path.read_text(encoding="utf-8")
+              if expected_package not in xml_text:
+                  raise SystemExit(f"{path} does not reference {expected_package}")
+
+          privapp = files[0].read_text(encoding="utf-8")
+          for permission in (
+              "android.permission.FOREGROUND_SERVICE",
+              "android.permission.FOREGROUND_SERVICE_DATA_SYNC",
+              "moe.shizuku.manager.permission.API_V23",
+          ):
+              if permission not in privapp:
+                  raise SystemExit(f"missing privapp permission: {permission}")
+
+          defaults = files[1].read_text(encoding="utf-8")
+          for permission in (
+              "android.permission.POST_NOTIFICATIONS",
+              "moe.shizuku.manager.permission.API_V23",
+          ):
+              if permission not in defaults:
+                  raise SystemExit(f"missing default permission: {permission}")
+          PY
+
+      - name: Validate APK shape
+        run: |
+          set -euo pipefail
+
+          test "$(stat -c%s vendor/nothing/stay4s/Stay4S.apk)" -gt 100000
+          unzip -l vendor/nothing/stay4s/Stay4S.apk | grep -q 'AndroidManifest.xml'
+          unzip -l vendor/nothing/stay4s/Stay4S.apk | grep -q 'classes.dex'
